@@ -1,11 +1,12 @@
 [project]
 name = "mcp-websearch"
-version = "0.1.0"
-description = "DuckDuckGo web search MCP server over streamable-HTTP"
+version = "0.2.0"
+description = "Web search (DuckDuckGo) + page reader (trafilatura) MCP over streamable-HTTP"
 requires-python = ">=3.11"
 dependencies = [
     "mcp>=1.27.2",
     "ddgs>=9.0",
+    "trafilatura>=1.12",
 ]
 
 [tool.uv]

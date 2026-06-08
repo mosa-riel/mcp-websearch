@@ -8,7 +8,7 @@ ENV MCP_HOST=0.0.0.0 \
 
 WORKDIR /app
 COPY server.py /app/server.py
-RUN pip install "mcp>=1.27.2" "ddgs>=9.0"
+RUN pip install "mcp>=1.27.2" "ddgs>=9.0" "trafilatura>=1.12"
 
 EXPOSE 8786
 CMD ["python", "server.py"]
