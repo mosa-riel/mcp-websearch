@@ -1,0 +1,13 @@
+# Bridged network (no host_network): agent reaches this by internal DNS name
+# `<repo>-mcp_websearch:8786`. No `ports:` mapping — internal-only, never on the LAN.
+name: MCP Websearch
+version: "0.1.0"
+slug: mcp_websearch
+description: DuckDuckGo web search MCP over HTTP for the reSpeaker agent
+url: https://github.com/mosa-riel/mcp-websearch
+arch:
+  - aarch64
+  - amd64
+init: true
+boot: auto
+startup: services
