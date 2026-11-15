@@ -1,12 +1,18 @@
 # mcp-websearch
 
-DuckDuckGo web-search MCP server for the [reSpeaker agent](https://gitlab.zzapps.nl/development/respeaker-agent).
+DuckDuckGo web-search MCP server for the [reSpeaker agent](https://github.com/mosa-riel/respeaker-agent).
 No API key. Speaks **streamable-HTTP** so it runs as its own container / Home Assistant
 add-on; the agent connects by `url`.
 
 ## Tools
 
-`web_search(query, max_results=5)` → `[{title, url, snippet}]`
+| tool | what |
+|---|---|
+| `web_search(query, max_results=5)` | DuckDuckGo (`ddgs` library) → `[{title, url, snippet}]` |
+| `fetch_page(url)` | the page as markdown with links and images (trafilatura) |
+
+[mcp-staan](https://github.com/mosa-riel/mcp-staan) also searches DuckDuckGo (next to staan.ai),
+so with that one installed this server is optional.
 
 ## Run
 
@@ -17,8 +23,8 @@ docker build -t mcp-websearch . && docker run -p 8786:8786 mcp-websearch
 
 ## Home Assistant add-on
 
-Copy this folder into the HA host's `/addons` dir (SSH/Samba add-on) → Install.
-Bridged; agent reaches it at `http://local-mcp_websearch:8786/mcp`.
+Add this repository to the add-on store, install "MCP Websearch". Bridged, internal only; the
+agent reaches it at `http://<repo-hash>-mcp-websearch:8786/mcp`.
 
 ## Env
 
